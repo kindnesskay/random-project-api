@@ -10,12 +10,11 @@ app.get("/api", (req, res) => {
 
 app.get("/api/idea", (req, res) => {
   let random_number = Math.floor(Math.random() * max) + 1;
-  console.log(random_number);
   try {
     let idea = data[random_number];
-    res.send({ data: idea });
+    return res.send({ data: idea });
   } catch (error) {
-    res.send({ error: "An error occured" });
+    return res.status(500).json({ error: "An error occured" });
   }
 });
 app.listen(port, () => {
