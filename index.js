@@ -1,9 +1,11 @@
 const express = require("express");
 const data = require("./data.json");
+const dotenv=require('dotenv')
 const cors=require("cors")
 const app = express();
 app.use(cors())
-const port = 3000;
+app.use(dotenv())
+const port =process.env.PORT;
 const max = 10;
 
 app.get("/api", (req, res) => {
