@@ -9,7 +9,10 @@ const port =process.env.PORT;
 const max = 10;
 
 app.get("/api", (req, res) => {
-  res.send({ message: "welcome to the random project api" });
+  res.send({ message: "welcome to the random project api  /api/idea" });
+});
+app.get("/", (req, res) => {
+  res.send({ message: "welcome to the random project api go to /api/idea" });
 });
 
 app.get("/api/idea", (req, res) => {
