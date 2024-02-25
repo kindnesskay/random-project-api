@@ -4,7 +4,7 @@ const dotenv=require('dotenv')
 const cors=require("cors")
 const app = express();
 app.use(cors())
-app.use(dotenv())
+dotenv.config()
 const port =process.env.PORT;
 const max = 10;
 
